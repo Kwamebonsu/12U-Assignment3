@@ -48,9 +48,9 @@ public class A3Q2 {
         numbers[4] = 4;
         numbers[5] = 5;
         numbers[6] = 6;
-        numbers[7] = 7;
-        numbers[8] = 8;
-        numbers[9] = 9;
+        numbers[7] = 8;
+        numbers[8] = 10;
+        numbers[9] = 11;
 
 
         // Test the method
