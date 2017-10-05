@@ -16,18 +16,46 @@ public class A3Q1 {
     }
 
     public void sort(int[] array) {
+         
         // Create a variable for the smallest number in the array
+        boolean done = false;
         int small = 0;
-        // Go through the array and find the smallest number
-        for (int p = 0; p < array.length; p++) {
-            for (int i = 0; i < array.length - 1; i++) {
-                if (array[i + 1] < array[small]) {
-                    small = i + 1;
-                }
+        int other = 0;
+        int position = 1;
+//////        // Go through the array and find the smallest number
+//////        for (int p = 0; p < array.length; p++) {
+//////            for (int i = 0; i < array.length - 1; i++) {
+//////                if (array[i + 1] < array[small]) {
+//////                    small = i + 1;
+//////                }
+//////            }
+//////            array[p] = array[small];
+//////        }
+//////        small = small + 1;
+
+
+        while (done == false) {
+            if (array[position] < array[small]) {
+                small = position;
+                position++;
             }
-            array[p] = array[small];
+            else if(array[small] < array[position]){
+                position++;
+            }
+            else if(array[small] == array[position]){
+                position++;
+            }
+            if(position == array.length - 1){
+                int temporary = array[small];
+                array[small] = array[0];
+                array[0] = temporary;
+//        swap(array, array[small], array[0]);
+                done = true;
+            }
         }
-        small = small + 1;
+        
+
+
 //        // Create a temporary variable
 //        int base = 0;
 //        int comp = 0;
