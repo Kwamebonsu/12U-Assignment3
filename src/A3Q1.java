@@ -48,13 +48,15 @@ public class A3Q1 {
             numbers[i] = (int) (Math.random() * 101);
         }
 
-        // Output the numbers in the array
+        // Output the numbers in the array before
         System.out.println("BEFORE:");
         for (int i = 0; i < numbers.length; i++) {
             System.out.println(numbers[i]);
         }
         System.out.println("");
         System.out.println("");
+
+        // and after
         test.sort(numbers);
         System.out.println("AFTER:");
         for (int i = 0; i < numbers.length; i++) {
