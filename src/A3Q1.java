@@ -16,63 +16,24 @@ public class A3Q1 {
     }
 
     public void sort(int[] array) {
-         
-        // Create a variable for the smallest number in the array
-        boolean done = false;
         int small = 0;
-        int other = 0;
-        int position = 1;
-//////        // Go through the array and find the smallest number
-//////        for (int p = 0; p < array.length; p++) {
-//////            for (int i = 0; i < array.length - 1; i++) {
-//////                if (array[i + 1] < array[small]) {
-//////                    small = i + 1;
-//////                }
-//////            }
-//////            array[p] = array[small];
-//////        }
-//////        small = small + 1;
+        // Keep track of which position we are sorting
+        for (int position = 0; position < array.length - 1; position++) {
+            // go through the rest looking for a smaller number
+            for (int i = position + 1; i < array.length; i++) {
+                // Have we found the smallest number?
+                if (array[i] < array[position]) {
+                    small = i;
+                } else if (array[position] < array[i]) {
+                    small = position;
+                }
+                // Swap the position
+                swap(array, small, position);
+            }
 
-
-        while (done == false) {
-            if (array[position] < array[small]) {
-                small = position;
-                position++;
-            }
-            else if(array[small] < array[position]){
-                position++;
-            }
-            else if(array[small] == array[position]){
-                position++;
-            }
-            if(position == array.length - 1){
-                int temporary = array[small];
-                array[small] = array[0];
-                array[0] = temporary;
-//        swap(array, array[small], array[0]);
-                done = true;
-            }
         }
-        
-
-
-//        // Create a temporary variable
-//        int base = 0;
-//        int comp = 0;
-//        // Keep track of which position we are sorting
-//        for (int position = 0; position < array.length; position++) {
-//            // go through the rest looking for a smaller number
-//            for (int i = position + 1; i < array.length; i++) {
-//                // Have we found smaller?
-//                if (array[i] < array[position]) {
-//                    // Set i as the temporary smallest
-//                    comp = i;
-//                }
-//            }
-//        }
-//        swap(array, base, comp);
-//        base++;
     }
+// Swap numbers
 
     /**
      * @param args the command line arguments
@@ -92,7 +53,8 @@ public class A3Q1 {
         for (int i = 0; i < numbers.length; i++) {
             System.out.println(numbers[i]);
         }
-
+        System.out.println("");
+        System.out.println("");
         test.sort(numbers);
         System.out.println("AFTER:");
         for (int i = 0; i < numbers.length; i++) {
