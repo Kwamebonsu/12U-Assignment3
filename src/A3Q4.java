@@ -8,6 +8,15 @@
  * @author bonsk5852
  */
 public class A3Q4 {
+    // Create a method
+
+    public void countingSort(int[] array) {
+        // Create a new array
+        int[] counter = new int[10];
+        // Go through the array
+        // Count the number of array[1] in the array
+        // 
+    }
 
     /**
      * @param args the command line arguments
