@@ -11,26 +11,19 @@ public class A3Q4 {
     // Create a method
 
     public void countingSort(int[] array) {
-        // Create a new array and fill it with 0s
+
+        // Create a tracker array
         int[] counter = new int[101];
-        for (int i = 0; i < counter.length; i++) {
-            counter[i] = 0;
-        }
         // Go through the array
-        for (int i = 0; i < counter.length; i++) {
-
-            // Compare the number at position p to i.
-            for (int p = 0; p < array.length; p++) {
-                if (i == array[p]) {
-                    counter[i]++;
-                }
-            }
+        for (int i = 0; i < array.length; i++) {
+            // Add one to the counter at the appropriate position
+            counter[array[i]]++;
         }
-        // Count the number of array[1] in the array
-
         // Output the sorted array
         for (int i = 0; i < counter.length; i++) {
-            System.out.println("Kwame " + array[i]);
+            for (int p = 0; p < counter[i]; p++) {
+                System.out.println(i);
+            }
         }
     }
 
@@ -47,10 +40,16 @@ public class A3Q4 {
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * 101);
         }
+        // Output the array before
         System.out.println("BEFORE:");
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        // Output the array after being sorted
+        System.out.println("After");
         test.countingSort(array);
     }
 }
